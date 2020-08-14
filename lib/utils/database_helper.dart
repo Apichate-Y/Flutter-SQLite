@@ -6,7 +6,7 @@ import 'package:flutter_sqlite/models/note.dart';
 
 class DatabaseHelper {
   static DatabaseHelper _databaseHelper;
-  static Database _databse;
+  static Database _database;
 
   String noteTable = 'note_table';
   String colId = 'id';
@@ -25,10 +25,10 @@ class DatabaseHelper {
   }
 
   Future<Database> get database async {
-    if (_databaseHelper == null) {
-      _databse = await initializeDatabase();
+    if (_database == null) {
+      _database = await initializeDatabase();
     }
-    return _databse;
+    return _database;
   }
 
   Future<Database> initializeDatabase() async {
