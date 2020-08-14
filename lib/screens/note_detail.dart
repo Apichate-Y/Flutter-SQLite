@@ -26,6 +26,15 @@ class _NoteDetailState extends State<NoteDetail> {
   _NoteDetailState(this.note, this.appBarTitle);
 
   @override
+  void initState() {
+    setState(() {
+      titleController.text = widget.note.title;
+      descriptionController.text = widget.note.description;
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     TextStyle textStyle = Theme.of(context).textTheme.title;
 
